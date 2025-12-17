@@ -300,7 +300,61 @@ menu "On-chip Peripheral Drivers"
                         endchoice
                     endif
             endif  #BSP_USING_TIM3_PWM
-        endif #BSP_USING_PWM
+        endif # BSP_USING_PWM
+
+            #-----------------------------ETR_COUNTER----------------------------------
+        menuconfig BSP_USING_TIM_ETR_CNT
+            bool "Enable timer ETR MAX=10M "
+            select RT_USING_HWTIMER
+            default n
+            if BSP_USING_TIM_ETR_CNT
+                config BSP_USING_TIM_ETR_CNT_DEBUG
+                        bool "Enable TIM ETR debug message output"
+                        default n
+
+                config BSP_USING_TIM1_ETR_CNT
+                    bool "Enable TIM1 ETR PA12 AF2 "
+                    default n
+
+                config BSP_USING_TIM2_ETR_CNT
+                    bool "Enable TIM1 ETR  "
+                    default n
+                    choice
+                        prompt "Select TIM2 ETR PIN"
+                        default TIM2_ETR_PIN_PA0
+                        config TIM2_ETR_PIN_PA0
+                            bool "PA0 AF5"
+                        config TIM1_ETR_PIN_PA15
+                            bool "PA15 AF2"
+                    endchoice #
+                config BSP_USING_TIM3_ETR_CNT
+                    bool "Enable TIM3 ETR PD2 AF2 "
+                    default n
+                config BSP_USING_TIM9_ETR_CNT
+                    bool "Enable TIM9 ETR PB2 AF1 "
+                    default n
+            endif #BSP_USING_TIM_ETR_CNT
+        
+            #-----------------------------EXT_COUNTER----------------------------------
+        menuconfig BSP_USING_TIM_EXT_COUNTER
+        bool "Enable TIM External Counter"
+        default n
+        select RT_USING_HWTIMER
+        if BSP_USING_TIM_EXT_COUNTER
+            config BSP_USING_TIM1_EXT_COUNTER
+                bool "Enable TIM1 External Counter"
+                default n
+                choice
+                    prompt "Select TIM1 Pin"
+                    default TIM1_CH1_PA8
+                    config TIM1_CH1_PA8
+                        bool "PA8 AF2"
+                    config TIM1_CH2_PA9
+                        bool "PA9 AF2"
+
+                endchoice
+        endif #---------BSP_USING_TIM_EXT_COUNTER------------
+
 
     rsource "../../libraries/n32_drivers/Kconfig"
 
