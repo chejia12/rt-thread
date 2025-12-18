@@ -615,6 +615,39 @@ menu "On-chip Peripheral Drivers"
 
                 endchoice
         endif #EXT_COUNTER
+    
+    	
+    #-----------------------------PULSE_WIDTH----------------------------------
+    menuconfig BSP_USING_TIM_PULSE_WIDTH
+        bool "Hardware Timer Pulse Width Measurement"
+        default n
+        if BSP_USING_TIM_PULSE_WIDTH
+            config BSP_USING_PULSE_WIDTH_DEMO
+                bool "Enable app demo"
+                default n
+
+            config BSP_USING_TIM1_PULSE_WIDTH
+                bool "Enable TIM1 PA8"
+                default n
+                help
+                  Enable TIM1_CH1 for pulse width measurement using input capture and reset mode
+                  GPIO: PA8 (TIM1_CH1)
+            
+            config BSP_USING_TIM4_PULSE_WIDTH
+                bool "Enable TIM4 PB6"
+                default n
+                help
+                  Enable TIM4_CH4 for pulse width measurement using input capture and reset mode
+                  GPIO: PB6 (TIM4_CH1)
+
+
+            config BSP_USING_TIM8_PULSE_WIDTH
+                bool "Enable TIM8 PC6"
+                default n
+                help
+                  Enable TIM8_CH1 for pulse width measurement using input capture and reset mode
+                  GPIO: PC6 (TIM2_CH1_REMAP)
+        endif #--------PULSE_WIDTH----------------
 
     rsource "../../libraries/n32_drivers/Kconfig"
 

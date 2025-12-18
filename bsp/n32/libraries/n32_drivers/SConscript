@@ -54,8 +54,11 @@ if GetDepend(['BSP_USING_TIM_ETR_CNT']):
     src += ['tim_etr_cnt.c']     
      
 if GetDepend(['BSP_USING_TIM_EXT_COUNTER']):
-    src += ['drv_tim_external_counter.c']   
-    
+    src += ['drv_tim_external_counter.c']  
+
+if GetDepend(['BSP_USING_TIM_PULSE_WIDTH']):
+    src += ['drv_tim_pulse_width.c']    
+      
 path =  [cwd]
 path += [cwd + '/config']
 

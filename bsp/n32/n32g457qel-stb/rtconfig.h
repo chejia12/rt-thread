@@ -432,15 +432,9 @@
 #define BSP_USING_UART
 #define BSP_USING_USART1
 #define UART1_PA9_PA10
-#define BSP_USING_TIM_EXT_COUNTER
-#define BSP_USING_EXT_COUNTER_DEMO
-#define BSP_USING_TIM1_EXT_COUNTER
-#define TIM1_CH1_PA8
-#define TIM2_CH1_PA0
-#define TIM3_CH1_PA6
-#define TIM4_CH1_PB6
-#define TIM5_CH1_PA0
-#define TIM8_CH1_PC6
+#define BSP_USING_TIM_PULSE_WIDTH
+#define BSP_USING_PULSE_WIDTH_DEMO
+#define BSP_USING_TIM1_PULSE_WIDTH
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */
