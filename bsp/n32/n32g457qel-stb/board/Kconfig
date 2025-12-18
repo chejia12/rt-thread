@@ -480,6 +480,141 @@ menu "On-chip Peripheral Drivers"
                 
         endif
     #-------------------- TIM ETR CLOCK2 --------------------
+    #-----------------------------EXT_COUNTER----------------------------------
+    menuconfig BSP_USING_TIM_EXT_COUNTER
+        bool "Enable TIM External Counter"
+        default n
+        select RT_USING_HWTIMER
+        if BSP_USING_TIM_EXT_COUNTER
+            config BSP_USING_EXT_COUNTER_DEMO
+                bool "Enable  External Counter Demo"
+                default n
+            config BSP_USING_TIM1_EXT_COUNTER
+                bool "Enable TIM1 External Counter"
+                default n
+                choice
+                    prompt "Select TIM1 Pin"
+                    default TIM1_CH1_PA8
+                    
+                    config TIM1_CH1_PA8
+                        bool "PA8"
+
+                    config TIM1_CH1_PE9
+                        bool "PE9"
+                    
+                    config TIM1_CH2_PA9
+                        bool "PA9"
+
+                    config TIM1_CH2_PE11
+                        bool "PE11 "
+
+                endchoice
+
+            config BSP_USING_TIM2_EXT_COUNTER
+                bool "Enable TIM2 External Counter"
+                default n
+                choice
+                    prompt "Select TIM2 Pin"
+                    default TIM2_CH1_PA0
+                    
+                    config TIM2_CH1_PA0
+                        bool "PA0"
+
+                    config TIM2_CH1_PA15
+                        bool "PA15"
+                    
+                    config TIM2_CH2_PA1
+                        bool "PA1"
+
+                    config TIM2_CH2_PB3
+                        bool "PB3"
+
+                endchoice
+
+            config BSP_USING_TIM3_EXT_COUNTER
+                bool "Enable TIM3 External Counter"
+                default n
+                choice
+                    prompt "Select TIM2 Pin"
+                    default TIM3_CH1_PA6
+                    
+                    config TIM3_CH1_PA6
+                        bool "PA6"
+
+                    config TIM3_CH1_PB4
+                        bool "PB4"
+
+                    config TIM3_CH1_PC6
+                        bool "PC6"
+                    
+                    config TIM3_CH2_PA7
+                        bool "PA7"
+
+                    config TIM3_CH2_PB5
+                        bool "PB5"
+                    
+                    config TIM3_CH2_PC7
+                        bool "PC7"
+
+                endchoice
+
+            config BSP_USING_TIM4_EXT_COUNTER
+                bool "Enable TIM4 External Counter"
+                default n
+                choice
+                    prompt "Select TIM4 Pin"
+                    default TIM4_CH1_PB6
+                    
+                    config TIM4_CH1_PB6
+                        bool "PB6"
+
+                    config TIM4_CH1_PD12
+                        bool "PD12"
+                    
+                    config TIM4_CH2_PB7
+                        bool "PB7"
+
+                    config TIM4_CH2_PD13
+                        bool "PD13"
+
+                endchoice
+
+            config BSP_USING_TIM5_EXT_COUNTER
+                bool "Enable TIM5 External Counter"
+                default n
+                choice
+                    prompt "Select TIM5 Pin"
+                    default TIM5_CH1_PA0
+                    
+                    config TIM5_CH1_PA0
+                        bool "PA0"
+                    
+                    config TIM5_CH1_PA1
+                        bool "PA1"
+
+                endchoice
+
+            config BSP_USING_TIM8_EXT_COUNTER
+                bool "Enable TIM8 External Counter"
+                default n
+                    choice
+                    prompt "Select TIM8 Pin"
+                    default TIM8_CH1_PC6
+                    
+                    config TIM8_CH1_PC6
+                        bool "PC6"
+
+                    config TIM8_CH1_PD14
+                        bool "PD14"
+                    
+                    config TIM8_CH2_PC7
+                        bool "PC7"
+
+                    config TIM8_CH2_PD15
+                        bool "PD15"
+
+                endchoice
+        endif #EXT_COUNTER
 
     rsource "../../libraries/n32_drivers/Kconfig"
 
