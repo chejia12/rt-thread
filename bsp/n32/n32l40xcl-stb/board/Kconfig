@@ -22,6 +22,7 @@ menu "On-chip Peripheral Drivers"
         select RT_USING_PIN
         default y
 
+     #---------------N32L40x UART--------------------
     menuconfig BSP_USING_UART
         bool "Enable UART"
         default y
@@ -30,25 +31,83 @@ menu "On-chip Peripheral Drivers"
             config BSP_USING_USART1
                 bool "Enable USART1"
                 default y
+                if BSP_USING_USART1
+                    choice
+                        prompt "Select UART Pin"
+                        default UART1_PA9_PA10
+                        config UART1_TX_PA4_PA5
+                            bool "PA4 AF1 PA5 AF4"
+                        config UART1_PA9_PA10
+                            bool "PA9 AF4 PA10 AF4"
+                        config UART1_PB6_PB7
+                            bool "PB6 AF0 PB7 AF0"
+                    endchoice
+                endif
 
             config BSP_USING_USART2
                 bool "Enable USART2"
                 default n
+                if BSP_USING_USART2
+                    choice
+                        prompt "Select UART Pin"
+                        default UART2_TX_PA2_RX_PA3
+                        config UART2_TX_PA2_RX_PA3
+                            bool "PA2 PA3 AF2"
+                        config UART2_TX_PB4_RX_PB5
+                            bool "PB4 AF4 PB5 AF6"
+                    endchoice
+                endif
 
             config BSP_USING_USART3
                 bool "Enable USART3"
                 default n
+                if BSP_USING_USART3
+                    choice
+                        prompt "Select UART Pin"
+                        default UART3_TX_PB10_RX_B11
+                        config UART3_TX_PB10_RX_B11
+                            bool "PB10 AF0 PB11 AF5"
+                        config UART3_TX_PC10_RX_PC11
+                            bool "PC10 AF5 PC11 AF5"
+                    endchoice
+                endif
 
             config BSP_USING_UART4
                 bool "Enable UART4"
                 default n
+                if BSP_USING_UART4
+                    choice
+                        prompt "Select UART Pin"
+                        default UART4_TX_PB0_RX_PB1
+                        config UART4_TX_PB0_RX_PB1
+                            bool "PB0  AF6 PB1 AF6"
+                        config UART4_TX_PB14_RX_PB15
+                            bool "PB14 AF6 PB15 AF6"
+                        config UART4_TX_PC10_RX_PC11
+                            bool "PC10 AF6 PC11 AF6"
+                        config UART4_TX_PD13_RX_PD12
+                            bool "PD13 AF6 PD12 AF6"
+                    endchoice
+                endif
 
             config BSP_USING_UART5
                 bool "Enable UART5"
                 default n
+                if BSP_USING_UART5
+                    choice
+                        prompt "Select UART Pin"
+                        default UART5_TX_PB8_RX_PB9
+                        config UART5_TX_PB4_RX_PB5
+                            bool "PB4  AF6 PB5 AF6"
+                        config UART5_TX_PB8_RX_PB9
+                            bool "PB8 AF6 PB9 AF6"
+                        config UART5_TX_PC12_RX_PD2
+                            bool "PC12 AF6 PD2 AF6"
+                    endchoice
+                endif
 
         endif
-
+    #---------------N32L40x UART--------------------
     
     menuconfig BSP_USING_SPI
         bool "Enable SPI BUS"
