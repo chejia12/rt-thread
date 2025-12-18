@@ -55,7 +55,7 @@ menu "On-chip Peripheral Drivers"
                 bool "Enable UART7"
                 default n
         endif
-
+    #--------BSP_USING_SPI-------------------
     menuconfig BSP_USING_SPI
         bool "Enable SPI BUS"
         default n
@@ -64,16 +64,55 @@ menu "On-chip Peripheral Drivers"
             config BSP_USING_SPI1
                 bool "Enable SPI1 BUS"
                 default n
+                if BSP_USING_SPI1
+                    choice
+                    prompt "Select SPI2 PIN"
+                    default BSP_SPI1_REMAP_0
+                    config BSP_SPI1_REMAP_0
+                        bool "PA5 PA6 PA7"
+                    config BSP_SPI1_REMAP_1
+                        bool "PB3 PB4 PB5 "
+                    config BSP_SPI1_REMAP_3
+                        bool "PE7 PE 8 PE9"
+                endchoice
+                endif
 
             config BSP_USING_SPI2
                 bool "Enable SPI2 BUS"
                 default n
+                if BSP_USING_SPI2
+                    choice
+                    prompt "Select SPI2 PIN"
+                    default BSP_SPI2_REMAP_0
+                    config BSP_SPI2_REMAP_0
+                        bool "PB13 PB14 PB15"
+                    config BSP_SPI2_REMAP_1
+                        bool "PC7 PC8 PC9"
+                    config BSP_SPI2_REMAP_3
+                        bool "PE11 PE12 PE13"
+                endchoice
+                endif
 
             config BSP_USING_SPI3
                 bool "Enable SPI3 BUS"
                 default n
+                if BSP_USING_SPI3
+                    choice
+                    prompt "Select SPI3 PIN"
+                    default BSP_SPI3_REMAP_0
+                    
+                    config BSP_SPI3_REMAP_0
+                        bool "PB3 PB4 PB5 "
 
-        endif
+                    config BSP_SPI3_REMAP_1
+                        bool "PC10 PC11 PC12"
+                    
+                    config BSP_SPI3_REMAP_3
+                        bool "PD9 PD11 PD12"
+                endchoice
+                endif
+
+        endif #--------BSP_USING_SPI-------------------
 
     menuconfig BSP_USING_I2C1
         bool "Enable I2C1 BUS (software simulation)"

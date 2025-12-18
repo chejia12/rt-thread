@@ -7,6 +7,8 @@ cwd = GetCurrentDir()
 # add the general drivers.
 src = Split("""
 """)
+#common driver file gpio,rcc init
+src += ['drv_base.c']
 
 if GetDepend(['RT_USING_PIN']):
     src += ['drv_gpio.c']

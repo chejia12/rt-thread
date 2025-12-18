@@ -49,20 +49,44 @@ menu "On-chip Peripheral Drivers"
 
         endif
 
+    
     menuconfig BSP_USING_SPI
         bool "Enable SPI BUS"
         default n
         select RT_USING_SPI
         if BSP_USING_SPI
-            config BSP_USING_SPI1
+             config BSP_USING_SPI1
                 bool "Enable SPI1 BUS"
                 default n
+                if BSP_USING_SPI1
+                    choice
+                    prompt "Select SPI1 PIN"
+                    default BSP_SPI1_REMAP_0
+                    config BSP_SPI1_REMAP_0
+                        bool "PA5 PA6 PA7"
+                    config BSP_SPI1_REMAP_1
+                        bool "PB3 PB4 PB5"
+                    config BSP_SPI1_REMAP_2
+                        bool "PD4 PD5 PD6"
+                endchoice
+                endif
 
             config BSP_USING_SPI2
                 bool "Enable SPI2 BUS"
                 default n
-
-        endif
+                if BSP_USING_SPI2
+                    choice
+                    prompt "Select SPI2 PIN"
+                    default BSP_SPI2_REMAP_0
+                    config BSP_SPI2_REMAP_0
+                        bool "PB13 PB14 PB15"
+                    config BSP_SPI2_REMAP_1
+                        bool "PC7 PC8 PC9"
+                    config BSP_SPI2_REMAP_3
+                        bool "PA10 PA11 PA12"
+                endchoice
+                endif
+        endif   #BSP_USING_SPI
 
     menuconfig BSP_USING_I2C1
         bool "Enable I2C1 BUS (software simulation)"
