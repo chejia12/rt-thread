@@ -153,6 +153,7 @@
 #define RT_USING_I2C_BITOPS
 #define RT_USING_ADC
 #define RT_USING_DAC
+#define RT_USING_PWM
 #define RT_USING_RTC
 #define RT_USING_SPI
 #define RT_USING_SPI_ISR
@@ -425,17 +426,15 @@
 #define BSP_USING_UART
 #define BSP_USING_USART1
 #define UART1_PA9_PA10
-#define BSP_USING_USART2
-#define UART2_TX_PA2_RX_PA3
-#define BSP_USING_USART3
-#define UART3_TX_PB10_RX_B11
-#define BSP_USING_UART4
-#define UART4_TX_PB0_RX_PB1
-#define BSP_USING_UART5
-#define UART5_TX_PB8_RX_PB9
-#define BSP_USING_SPI
-#define BSP_USING_SPI1
-#define BSP_SPI1_REMAP_2
+#define BSP_USING_PWM
+#define BSP_USING_TIM1_PWM
+#define BSP_USING_TIM1_PWM_CH1
+#define BSP_USING_TIM2_PWM
+#define BSP_USING_TIM2_PWM_CH1
+#define TIM2_PWM_CH1_PA0
+#define BSP_USING_TIM3_PWM
+#define BSP_USING_TIM3_PWM_CH1
+#define TIM3_PWM_CH1_PA6
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */
