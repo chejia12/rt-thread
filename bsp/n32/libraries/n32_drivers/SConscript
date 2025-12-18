@@ -48,7 +48,11 @@ if GetDepend(['RT_USING_WDT']):
     src += ['drv_wdt.c']
 
 if GetDepend(['BSP_USING_PWM']):
-    src += ['drv_pwm.c']   
+    src += ['drv_pwm.c']  
+
+if GetDepend(['BSP_USING_TIM_ETR_CNT']):
+    src += ['tim_etr_cnt.c']     
+     
 
 path =  [cwd]
 path += [cwd + '/config']

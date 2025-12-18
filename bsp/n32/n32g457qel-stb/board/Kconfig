@@ -159,7 +159,7 @@ menu "On-chip Peripheral Drivers"
                     config BSP_SPI1_REMAP_0
                         bool "PA5 PA6 PA7"
                     config BSP_SPI1_REMAP_1
-                        bool "PB3 PB4 PB5 "
+                        bool "PB3 PB4 PB5"
                     config BSP_SPI1_REMAP_3
                         bool "PE7 PE 8 PE9"
                 endchoice
@@ -190,7 +190,7 @@ menu "On-chip Peripheral Drivers"
                     default BSP_SPI3_REMAP_0
                     
                     config BSP_SPI3_REMAP_0
-                        bool "PB3 PB4 PB5 "
+                        bool "PB3 PB4 PB5"
 
                     config BSP_SPI3_REMAP_1
                         bool "PC10 PC11 PC12"
@@ -330,10 +330,10 @@ menu "On-chip Peripheral Drivers"
             # --------------selcet remap-----------------
             if BSP_USING_TIM1_PWM
                 choice
-                    prompt "Select Pin  "
+                    prompt "Select Pin"
                     default TIM1_REMAP_0
                     config TIM1_REMAP_0
-                        bool "PA8 PA9 PA10 PA11 "
+                        bool "PA8 PA9 PA10 PA11"
                     config TIM1_REMAP_3
                         bool "PE9 PE11 PE13 PE14"
                 endchoice
@@ -358,14 +358,14 @@ menu "On-chip Peripheral Drivers"
             default n
             if BSP_USING_TIM2_PWM
                  choice
-                    prompt "Select Pin  "
+                    prompt "Select Pin"
                     default TIM2_REMAP_0
                     config TIM2_REMAP_0
-                        bool "PA0 PA1 PA2 PA3 "
+                        bool "PA0 PA1 PA2 PA3"
                      config TIM2_REMAP_1
-                        bool "PA15 PB3 PA2 PA3 "
+                        bool "PA15 PB3 PA2 PA3"
                      config TIM2_REMAP_2
-                        bool "PA0 PA1 PB10 PB11 "
+                        bool "PA0 PA1 PB10 PB11"
                     config TIM2_REMAP_3
                         bool "PA15 PB3 PB10 PB11"
                 endchoice
@@ -389,12 +389,12 @@ menu "On-chip Peripheral Drivers"
             default n
             if BSP_USING_TIM3_PWM
                  choice
-                    prompt "Select Pin  "
+                    prompt "Select Pin"
                     default TIM3_REMAP_0
                     config TIM3_REMAP_0
-                        bool "PA6 PA7 PB0 PB1 "
+                        bool "PA6 PA7 PB0 PB1"
                     config TIM3_REMAP_2
-                        bool "PB4 PB5 PB0 PB1 "
+                        bool "PB4 PB5 PB0 PB1"
                     config TIM3_REMAP_3
                         bool "PC6 PC7 PC8 PC9"
                 endchoice
@@ -414,7 +414,72 @@ menu "On-chip Peripheral Drivers"
             endif#BSP_USING_TIM3_PWM
             
         endif#BSP_USING_PWM
-    
+
+    #-------------------- TIM ETR CLOCK2 --------------------
+    menuconfig BSP_USING_TIM_ETR_CNT
+        bool "Enable timer ETR"
+        select RT_USING_HWTIMER
+        default n
+        if BSP_USING_TIM_ETR_CNT
+        config BSP_USING_TIM_ETR_CNT_DEBUG
+                bool "Enable TIM ETR debug message output"
+                default n
+        config BSP_USING_TIM_ETR_CNT_DEMO
+                    bool "Enable demo"
+                    default n
+
+        config BSP_USING_TIM1_ETR_CNT
+            bool "Enable TIM1 ETR"
+            default n
+            choice
+                prompt "Select TIM2 ETR"
+                default TIM1_ETR_PIN_PA12
+                
+                config TIM1_ETR_PIN_PA12
+                    bool "PA12 REMAP VAL = 0,1,2"
+
+                config TIM1_ETR_PIN_PE7
+                    bool "PE7 REMAP VAL = 3"
+            endchoice
+
+        config BSP_USING_TIM2_ETR_CNT
+            bool "Enable TIM2 ETR"
+            default n
+            choice
+                prompt "Select TIM2 ETR"
+                default TIM2_ETR_PIN_PA0
+                
+                config TIM2_ETR_PIN_PA0
+                    bool "PA0 REMAP VAL = 0,2"
+
+                config TIM2_ETR_PIN_PA15
+                    bool "PA15 REMAP VAL = 1,3"
+            endchoice
+
+        config BSP_USING_TIM3_ETR_CNT
+            bool "Enable TIM3 ETR  PD2"
+            default n
+
+        config BSP_USING_TIM4_ETR_CNT
+            bool "Enable TIM4 ETR  PE0"
+            default n
+
+        config BSP_USING_TIM8_ETR_CNT
+            bool "Enable TIM8 ETR  PA0"
+            default n
+            choice
+                prompt "Select tim ETR"
+                default TIM8_ETR_PIN_PA0
+
+                config TIM8_ETR_PIN_PA0
+                    bool "PA0 REMAP VAL = 0"
+
+                config TIM8_ETR_PIN_PB4
+                    bool "PB4 REMAP VAL = 1,3"
+            endchoice
+                
+        endif
+    #-------------------- TIM ETR CLOCK2 --------------------
 
     rsource "../../libraries/n32_drivers/Kconfig"
 

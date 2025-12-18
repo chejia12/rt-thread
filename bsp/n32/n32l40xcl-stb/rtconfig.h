@@ -426,15 +426,11 @@
 #define BSP_USING_UART
 #define BSP_USING_USART1
 #define UART1_PA9_PA10
-#define BSP_USING_PWM
-#define BSP_USING_TIM1_PWM
-#define BSP_USING_TIM1_PWM_CH1
-#define BSP_USING_TIM2_PWM
-#define BSP_USING_TIM2_PWM_CH1
-#define TIM2_PWM_CH1_PA0
-#define BSP_USING_TIM3_PWM
-#define BSP_USING_TIM3_PWM_CH1
-#define TIM3_PWM_CH1_PA6
+#define BSP_USING_TIM_ETR_CNT
+#define BSP_USING_TIM_ETR_CNT_DEBUG
+#define BSP_USING_TIM_ETR_CNT_DEMO
+#define BSP_USING_TIM1_ETR_CNT
+#define TIM2_ETR_PIN_PA0
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */

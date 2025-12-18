@@ -432,34 +432,13 @@
 #define BSP_USING_UART
 #define BSP_USING_USART1
 #define UART1_PA9_PA10
-#define BSP_USING_USART2
-#define UART2_PA2_PA3
-#define BSP_USING_USART3
-#define UART3_PB10_PB11
-#define BSP_USING_UART4
-#define UART4_PC10_PC11
-#define BSP_USING_UART5
-#define UART5_PC12_PD2
-#define BSP_USING_UART6
-#define UART6_PE2_PE3
-#define BSP_USING_UART7
-#define UART7_PC4_PC5
-#define BSP_USING_SPI
-#define BSP_USING_SPI1
-#define BSP_SPI1_REMAP_1
-#define BSP_USING_SPI3
-#define BSP_SPI3_REMAP_0
-#define BSP_USING_PWM
-#define BSP_USING_TIM1_PWM
-#define TIM1_REMAP_0
-#define BSP_USING_TIM1_PWM_CH1
-#define BSP_USING_TIM1_PWM_CH4
-#define BSP_USING_TIM2_PWM
-#define TIM2_REMAP_0
-#define BSP_USING_TIM2_PWM_CH0
-#define BSP_USING_TIM3_PWM
-#define TIM3_REMAP_0
-#define BSP_USING_TIM3_PWM_CH0
+#define BSP_USING_TIM_ETR_CNT
+#define BSP_USING_TIM_ETR_CNT_DEBUG
+#define BSP_USING_TIM_ETR_CNT_DEMO
+#define BSP_USING_TIM1_ETR_CNT
+#define TIM1_ETR_PIN_PA12
+#define TIM2_ETR_PIN_PA0
+#define TIM8_ETR_PIN_PA0
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */
