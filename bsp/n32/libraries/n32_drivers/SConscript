@@ -7,6 +7,8 @@ cwd = GetCurrentDir()
 # add the general drivers.
 src = Split("""
 """)
+#common driver file gpio,rcc init
+src += ['drv_base.c']
 
 src += ['drv_base.c']
 
@@ -49,15 +51,17 @@ if GetDepend(['RT_USING_WDT']):
     src += ['drv_wdt.c']
 
 if GetDepend(['BSP_USING_PWM']):
-    src += ['drv_pwm.c']
+    src += ['drv_pwm.c']  
 
 if GetDepend(['BSP_USING_TIM_ETR_CNT']):
-    src += ['tim_ext_clk2.c']
-
+    src += ['tim_etr_cnt.c']     
+     
 if GetDepend(['BSP_USING_TIM_EXT_COUNTER']):
-    src += ['tim_ext_clk1.c']
-    
-        
+    src += ['drv_tim_external_counter.c']  
+
+if GetDepend(['BSP_USING_TIM_PULSE_WIDTH']):
+    src += ['drv_tim_pulse_width.c']    
+      
 path =  [cwd]
 path += [cwd + '/config']
 

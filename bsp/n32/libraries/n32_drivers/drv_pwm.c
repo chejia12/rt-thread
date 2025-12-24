@@ -21,6 +21,9 @@
         4.测试发现tim3 的PA6,PA7,PB0,PB1,输出pwm出正常
         5.测试发现tim3 的Pb4,pb5,pc8,pc9,输出pwm出正常
         6.测试发现tim3 的pc6,pc7,输出pwm出正常
+
+2025-12-18
+    n32g52x的定时器tim1的pa-pa11的pwm配置加上了，未测试
  */
 #include <rtconfig.h>
 #ifdef BSP_USING_PWM
@@ -78,6 +81,35 @@ static struct n32_pwm n32_pwm_obj[] =
 
 /****************************通道定义*********************************** */
 
+#ifdef TIM1_REMAP_0
+            .gpio_af = 0,
+
+#ifdef BSP_USING_TIM1_PWM_CH1
+            .ch[0].gpio_grp = GPIOA,
+            .ch[0].pin = GPIO_PIN_8,
+            .ch[0].pwm_mode = TIM_OCMODE_PWM1,
+            .ch[0].info = "TIM1 PWMCH1 PA8",
+#endif /* BSP_USING_TIM1_PWM_CH1 */
+#ifdef BSP_USING_TIM1_PWM_CH2
+            .ch[1].gpio_grp = GPIOA,
+            .ch[1].pin = GPIO_PIN_9,
+            .ch[1].pwm_mode = TIM_OCMODE_PWM1,
+            .ch[1].info = "TIM1 PWMCH2 PA9",
+#endif /* BSP_USING_TIM1_PWM_CH2 */
+#ifdef BSP_USING_TIM1_PWM_CH3
+            .ch[2].gpio_grp = GPIOA,
+            .ch[2].pin = GPIO_PIN_10,
+            .ch[2].pwm_mode = TIM_OCMODE_PWM1,
+            .ch[2].info = "TIM1 PWMCH3 PA10",
+#endif /* BSP_USING_TIM1_PWM_CH3 */
+#ifdef BSP_USING_TIM1_PWM_CH4
+            .ch[3].gpio_grp = GPIOA,
+            .ch[3].pin = GPIO_PIN_11,
+            .ch[3].pwm_mode = TIM_OCMODE_PWM1,
+            .ch[3].info = "TIM1 PWMCH4 PA11",
+#endif /* BSP_USING_TIM1_PWM_CH4 */
+#endif /*TIM1_REMAP_0*/
+
 #ifdef TIM1_REMAP_3
             .gpio_af = GPIO_ALL_RMP_TIM1,
 
@@ -107,21 +139,6 @@ static struct n32_pwm n32_pwm_obj[] =
 #endif /* TIM1_PWM_CFG_CH4 */
 #endif /*TIM1_REMAP_3*/
 
-#ifdef BSP_USING_TIM1_PWM_CH1
-
-            .gpio_grp = GPIOA,
-            .pin = GPIO_PIN_8,
-            .gpio_af = GPIO_AF2_TIM1,
-
-#endif /* TIM1_PWM_CFG_CH1 */
-
-#ifdef BSP_USING_TIM1_PWM_CH4
-
-            .gpio_grp = GPIOA,
-            .pin = GPIO_PIN_11,
-            .gpio_af = GPIO_AF2_TIM1,
-
-#endif /*BSP_USING_TIM1_PWM_CH4  */
             /****************************通道定义*********************************** */
         },
 #endif /*BSP_USING_TIM1_PWM*/
@@ -349,46 +366,46 @@ static struct n32_pwm n32_pwm_obj[] =
             .tim = TIM2,
             .name = "pwm2",
 #ifdef BSP_USING_TIM2_PWM_CH1
-#ifdef TIM2_CH1_PA0
+#ifdef TIM2_PWM_CH1_PA0
             .ch[0].gpio_grp = GPIOA,
             .ch[0].pin = GPIO_PIN_0,
             .ch[0].info = "TIM2 PWMCH1 PA0",
             .ch[0].gpio_af = GPIO_AF2_TIM2,
-#endif /* TIM2_CH1_PA0 */
-#ifdef TIM2_CH1_PA15
+#endif /* TIM2_PWM_CH1_PA0 */
+#ifdef TIM2_PWM_CH1_PA15
             .ch[0].gpio_grp = GPIOA,
             .ch[0].pin = GPIO_PIN_15,
             .ch[0].info = "TIM2 PWMCH1 PA15",
             .ch[0].gpio_af = GPIO_AF5_TIM2,
-#endif /* TIM2_CH1_PA15 */
+#endif /* TIM2_PWM_CH1_PA15 */
             .ch[0].pwm_mode = TIM_OCMODE_PWM1,
 #endif /* TIM2_PWM_CFG_CH1 */
 
 #ifdef BSP_USING_TIM2_PWM_CH2
-#ifdef TIM2_CH2_PA1
+#ifdef TIM2_PWM_CH2_PA1
             .ch[1].gpio_grp = GPIOA,
             .ch[1].pin = GPIO_PIN_1,
             .ch[1].info = "TIM2 PWMCH2 PA1",
-#endif /* TIM2_CH2_PA1 */
-#ifdef TIM2_CH2_PB3
+#endif /* TIM2_PWM_CH2_PA1 */
+#ifdef TIM2_PWM_CH2_PB3
             .ch[1].gpio_grp = GPIOB,
             .ch[1].pin = GPIO_PIN_3,
             .ch[1].info = "TIM2 PWMCH2 PB3",
-#endif /* TIM2_CH2_PB3 */
+#endif /* TIM2_PWM_CH2_PB3 */
             .ch[1].gpio_af = GPIO_AF2_TIM2,
             .ch[1].pwm_mode = TIM_OCMODE_PWM1,
 #endif /* TIM2_PWM_CFG_CH2 */
 #ifdef BSP_USING_TIM2_PWM_CH3
-#ifdef TIM2_CH3_PA2
+#ifdef TIM2_PWM_CH3_PA2
             .ch[2].gpio_grp = GPIOA,
             .ch[2].pin = GPIO_PIN_2,
             .ch[2].info = "TIM2 PWMCH3 PA2",
-#endif /* TIM2_CH3_PA2 */
-#ifdef TIM2_CH3_PB10
+#endif /* TIM2_PWM_CH3_PA2 */
+#ifdef TIM2_PWM_CH3_PB10
             .ch[2].gpio_grp = GPIOB,
             .ch[2].pin = GPIO_PIN_10,
             .ch[2].info = "TIM2 PWMCH3 PB10",
-#endif /* TIM2_CH3_PB10 */
+#endif /* TIM2_PWM_CH3_PB10 */
             .ch[2].pwm_mode = TIM_OCMODE_PWM1,
             .ch[2].gpio_af = GPIO_AF2_TIM2,
 #endif /* TIM2_PWM_CFG_CH3 */
@@ -408,72 +425,72 @@ static struct n32_pwm n32_pwm_obj[] =
             .tim = TIM3,
             .name = "pwm3",
 #ifdef BSP_USING_TIM3_PWM_CH1
-#ifdef TIM3_CH1_PA6
+#ifdef TIM3_PWM_CH1_PA6
             .ch[0].gpio_grp = GPIOA,
             .ch[0].pin = GPIO_PIN_6,
             .ch[0].info = "TIM3 PWMCH1 PA6",
 
-#endif /* TIM3_CH1_PA6 */
-#ifdef TIM3_CH1_PB4
+#endif /* TIM3_PWM_CH1_PA6 */
+#ifdef TIM3_PWM_CH1_PB4
             .ch[0].gpio_grp = GPIOB,
             .ch[0].pin = GPIO_PIN_4,
             .ch[0].info = "TIM3 PWMCH1 PB4",
-#endif /* TIM3_CH1_PB4 */
-#ifdef TIM3_CH1_PC6
+#endif /* TIM3_PWM_CH1_PB4 */
+#ifdef TIM3_PWM_CH1_PC6
             .ch[0].gpio_grp = GPIOC,
             .ch[0].pin = GPIO_PIN_6,
             .ch[0].info = "TIM3 PWMCH1 PC6",
-#endif /* TIM3_CH1_PC6 */
+#endif /* TIM3_PWM_CH1_PC6 */
             .ch[0].gpio_af = GPIO_AF2_TIM3,
             .ch[0].pwm_mode = TIM_OCMODE_PWM1,
 #endif /* TIM3_PWM_CFG_CH1 */
 
 #ifdef BSP_USING_TIM3_PWM_CH2
-#ifdef TIM3_CH2_PA7
+#ifdef TIM3_PWM_CH2_PA7
             .ch[1].gpio_grp = GPIOA,
             .ch[1].pin = GPIO_PIN_7,
             .ch[1].info = "TIM3 PWMCH2 PA7",
             .ch[1].gpio_af = GPIO_AF2_TIM3,
-#endif /* TIM3_CH2_PA7 */
-#ifdef TIM3_CH2_PB5
+#endif /* TIM3_PWM_CH2_PA7 */
+#ifdef TIM3_PWM_CH2_PB5
             .ch[1].gpio_grp = GPIOB,
             .ch[1].pin = GPIO_PIN_5,
             .ch[1].info = "TIM3 PWMCH2 PB5",
             .ch[1].gpio_af = GPIO_AF4_TIM3,
-#endif /* TIM3_CH2_PB5 */
-#ifdef TIM3_CH2_PC7
+#endif /* TIM3_PWM_CH2_PB5 */
+#ifdef TIM3_PWM_CH2_PC7
             .ch[1].gpio_grp = GPIOC,
             .ch[1].pin = GPIO_PIN_7,
             .ch[1].info = "TIM3 PWMCH2 PC7",
             .ch[1].gpio_af = GPIO_AF2_TIM3,
-#endif /* TIM3_CH2_PC7 */
+#endif /* TIM3_PWM_CH2_PC7 */
             .ch[1].pwm_mode = TIM_OCMODE_PWM1,
 #endif /* TIM3_PWM_CFG_CH2 */
 #ifdef BSP_USING_TIM3_PWM_CH3
-#ifdef TIM3_CH3_PB0
+#ifdef TIM3_PWM_CH3_PB0
             .ch[2].gpio_grp = GPIOB,
             .ch[2].pin = GPIO_PIN_0,
             .ch[2].info = "TIM3 PWMCH3 PB0",
-#endif /* TIM3_CH3_PB0 */
-#ifdef TIM3_CH3_PC8
+#endif /* TIM3_PWM_CH3_PB0 */
+#ifdef TIM3_PWM_CH3_PC8
             .ch[2].gpio_grp = GPIOC,
             .ch[2].pin = GPIO_PIN_8,
             .ch[2].info = "TIM3 PWMCH3 PC8",
-#endif /* TIM3_CH3_PC8 */
+#endif /* TIM3_PWM_CH3_PC8 */
             .ch[2].pwm_mode = TIM_OCMODE_PWM1,
             .ch[2].gpio_af = GPIO_AF2_TIM3,
 #endif /* TIM3_PWM_CFG_CH3 */
 #ifdef BSP_USING_TIM3_PWM_CH4
-#ifdef TIM3_CH4_PB1
+#ifdef TIM3_PWM_CH4_PB1
             .ch[3].gpio_grp = GPIOB,
             .ch[3].pin = GPIO_PIN_1,
             .ch[3].info = "TIM3 PWMCH4 PB1",
-#endif /* TIM3_CH4_PB1 */
-#ifdef TIM3_CH4_PC9
+#endif /* TIM3_PWM_CH4_PB1 */
+#ifdef TIM3_PWM_CH4_PC9
             .ch[3].gpio_grp = GPIOC,
             .ch[3].pin = GPIO_PIN_9,
             .ch[3].info = "TIM3 PWMCH4 PC9",
-#endif /* TIM3_CH4_PC9 */
+#endif /* TIM3_PWM_CH4_PC9 */
             .ch[3].gpio_af = GPIO_AF2_TIM3,
             .ch[3].pwm_mode = TIM_OCMODE_PWM1,
 #endif /* TIM3_PWM_CFG_CH4 */
@@ -999,24 +1016,24 @@ __exit:
 }
 INIT_DEVICE_EXPORT(n32_pwm_init);
 
-#if 0 // pwm demo
+#if 0 // pem demo
 #include <rtthread.h>
 #include <rtdevice.h>
 
-#define PWM_DEV_NAME "pwm3" /* PWM设备名称 */
+#define PWM_DEV_NAME "pwm1" /* PWM设备名称 */
 #define PWM_DEV_CHANNEL 0   /* PWM通道 */
 
-rt_device_t pwm; /* PWM设备句柄 */
+struct rt_device_pwm *pwm; /* PWM设备句柄 */
 
-static int pwm_led_sample(int argc, char *argv[])
+static int pwm_led_sample(void)
 {
     rt_uint32_t period, pulse;
 
-    period = 1000;       /* 周期为0.5ms，单位为纳秒ns */
+    period = 1000000;       /* 周期为0.5ms，单位为纳秒ns */
     pulse = period >> 1; /* PWM脉冲宽度值，单位为纳秒ns */
-   // pulse=0.1f*period;
+//    pulse=0.1f*period;
     /* 查找设备 */
-    pwm = rt_device_find(PWM_DEV_NAME);
+    pwm = (struct rt_device_pwm *)rt_device_find(PWM_DEV_NAME);
     if (pwm == RT_NULL)
     {
         LOG_D("pwm sample run ERROR! can't find %s device!\n", PWM_DEV_NAME);
@@ -1024,24 +1041,25 @@ static int pwm_led_sample(int argc, char *argv[])
     }
 
     /* 设置PWM周期和脉冲宽度默认值 */
-    rt_pwm_set(pwm, 0, period, pulse);
-    /* 使能设备 */
-    rt_pwm_enable(pwm, 0);
+    // rt_pwm_set(pwm, 0, period, pulse);
+    // /* 使能设备 */
+    // rt_pwm_enable(pwm, 0);
 
-    /* 设置PWM周期和脉冲宽度默认值 */
-    rt_pwm_set(pwm, 1, period, pulse);
-    /* 使能设备 */
-    rt_pwm_enable(pwm, 1);
+    // /* 设置PWM周期和脉冲宽度默认值 */
+    // rt_pwm_set(pwm, 1, period, pulse);
+    // /* 使能设备 */
+    // rt_pwm_enable(pwm, 1);
 
-    /* 设置PWM周期和脉冲宽度默认值 */
-    rt_pwm_set(pwm, 2, period, pulse);
-    /* 使能设备 */
-    rt_pwm_enable(pwm, 2);
+    // /* 设置PWM周期和脉冲宽度默认值 */
+    // rt_pwm_set(pwm, 2, period, pulse);
+    // /* 使能设备 */
+    // rt_pwm_enable(pwm, 2);
 
     /* 设置PWM周期和脉冲宽度默认值 */
     rt_pwm_set(pwm, 3, period, pulse);
     /* 使能设备 */
     rt_pwm_enable(pwm, 3);
+    return 0;
 }
 /* 导出到 msh 命令列表中 */
 // MSH_CMD_EXPORT(pwm_led_sample, pwm sample);
