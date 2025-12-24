@@ -425,26 +425,13 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_USART1
-<<<<<<< HEAD
-#define BSP_USING_PWM
-#define BSP_USING_TIM2_PWM
-#define BSP_USING_TIM2_PWM_CH1
-#define TIM2_CH1_PA0
-#define BSP_USING_TIM_ETR_CNT
-#define TIM2_ETR_PIN_PA0
-#define BSP_USING_TIM3_ETR_CNT
-#define BSP_USING_TIM_EXT_COUNTER
-#define BSP_USING_TIM1_EXT_COUNTER
-#define TIM1_CH1_PA8
-=======
 #define UART1_PA9_PA10
-#define BSP_USING_TIM_EXT_COUNTER
-#define BSP_USING_EXT_COUNTER_DEMO
-#define BSP_USING_TIM1_EXT_COUNTER
-#define TIM1_CH1_PA8
 #define TIM2_CH1_PA0
 #define TIM3_CH1_PA6
->>>>>>> N32
+#define BSP_USING_TIM_EXT_COUNTER
+#define BSP_USING_TIM1_EXT_COUNTER
+#define TIM1_CH1_PA8
+#define BSP_USING_EXT_COUNTER_DEMO
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */
