@@ -29,6 +29,12 @@
 
  */
 #include <rtthread.h>
+
+#define DBG_TAG "SIMPLE"
+#define DBG_LVL DBG_LOG
+#include <rtdbg.h>
+
+
 #include <rtdevice.h>
 #include <board.h>
 #include "drv_spi.h"
@@ -71,8 +77,8 @@ static void register_spi_dev_of_norflash(void)
 	res = rt_spi_bus_attach_device_cspin(&spi_dev_gd25q, SFUD_NOR_FLASH_NAME, SFUD_NOR_FLASH_ATTACH_SPI_BUS, SPI_CS_NO_FLASH, (void *)&spi_cs);
 	if (res != RT_EOK)
 	{
-		rt_kprintf("rt_spi_bus_attach_device() run failed!\n");
-		return res;
+		LOG_W("rt_spi_bus_attach_device() run failed!\n");
+		return ;
 	}
 }
 static int rt_hw_spi_flash_init(void)
@@ -117,24 +123,24 @@ int mnt_init(void)
 	{
 		if (0 == dfs_mkfs(FS_TYLE, MTD_DEV))
 		{
-			log_w("dfs_mkfs %s ok: %d\n", MTD_DEV, res);
+			LOG_W("dfs_mkfs %s ok: %d\n", MTD_DEV, res);
 			if (dfs_mount(MTD_DEV, "/", FS_TYLE, 0, 0))
 			{
-				log_i("Mount %s successfully: %d", MTD_DEV, res);
+				LOG_D("Mount %s successfully: %d", MTD_DEV, res);
 			}
 			else
 			{
-				log_w("Mount %s fail: %d\n", MTD_DEV, res);
+				LOG_W("Mount %s fail: %d\n", MTD_DEV, res);
 			}
 		}
 		else
 		{
-			log_w("dfs_mkfs %s fail: %d", MTD_DEV, res);
+			LOG_W("dfs_mkfs %s fail: %d", MTD_DEV, res);
 		}
 	}
 	else
 	{
-		log_i("Mounted %s to / successfully", MTD_DEV);
+		LOG_D("Mounted %s to / successfully", MTD_DEV);
 	}
 
 	return 0;
@@ -151,16 +157,16 @@ int dfs_formart(void)
 	{
 		if (dfs_mount(MTD_DEV, "/", FS_TYLE, 0, 0))
 		{
-			log_i("Mount %s successfully", MTD_DEV);
+			LOG_D("Mount %s successfully", MTD_DEV);
 		}
 		else
 		{
-			log_w("Mount %s fail", MTD_DEV);
+			LOG_W("Mount %s fail", MTD_DEV);
 		}
 	}
 	else
 	{
-		log_w("dfs_mkfs %s fail", MTD_DEV);
+		LOG_W("dfs_mkfs %s fail", MTD_DEV);
 	}
 	return 0;
 }

@@ -3,16 +3,19 @@ menu "user driber of 58"
  	config BRD_DFS_NOR_FLASH
         bool "Enable IN NOR FLASH MOUNT DFS elm or lfs"
         default n
+		depends on RT_USING_DFS#正向依赖RT_USING_DFS没有定义这个都不显示
+		depends on RT_USING_SFUD#正向依赖RT_USING_SFUD
+		depends on RT_USING_DFS_ELMFAT || PKG_USING_LITTLEFS#依赖一种一个定义
         if BRD_DFS_NOR_FLASH
             config SFUD_NOR_FLASH_ATTACH_SPI_BUS
-                string "select spi  bus of attach nor flash"
+                string "Select the SPI bus connected to the NOR flash"
                 default "spi1"
 			config SPI_CS_NO_FLASH
 				int "select spi cs pin"
 				range 0 112
 				default 4
             config SFUD_NOR_FLASH_NAME
-                string "set nor flash device name  dev type = SPI Device "
+                string "Set NOR flash block device name"
                 default "spi11"
 			
         endif

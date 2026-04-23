@@ -139,7 +139,21 @@
 
 /* DFS: device virtual file system */
 
+#define RT_USING_DFS
+#define DFS_USING_POSIX
+#define DFS_USING_WORKDIR
+#define DFS_FD_MAX 16
+#define RT_USING_DFS_V1
+#define DFS_FILESYSTEMS_MAX 4
+#define DFS_FILESYSTEM_TYPES_MAX 4
 /* end of DFS: device virtual file system */
+#define RT_USING_FAL
+#define FAL_USING_DEBUG
+#define FAL_PART_HAS_TABLE_CFG
+#define FAL_USING_SFUD_PORT
+#define FAL_USING_NOR_FLASH_DEV_NAME "flash"
+#define FAL_DEV_NAME_MAX 24
+#define FAL_DEV_BLK_MAX 6
 
 /* Device Drivers */
 
@@ -165,6 +179,10 @@
 #define RT_USING_RTC
 #define RT_USING_SPI
 #define RT_USING_SPI_ISR
+#define RT_USING_SFUD
+#define RT_SFUD_USING_SFDP
+#define RT_SFUD_USING_FLASH_INFO_TABLE
+#define RT_SFUD_SPI_MAX_HZ 50000000
 #define RT_USING_WDT
 #define RT_USING_PIN
 /* end of Device Drivers */
@@ -295,6 +313,16 @@
 /* Micrium: Micrium software products porting for RT-Thread */
 
 /* end of Micrium: Micrium software products porting for RT-Thread */
+#define PKG_USING_LITTLEFS
+#define PKG_USING_LITTLEFS_LATEST_VERSION
+#define LFS_READ_SIZE 256
+#define LFS_PROG_SIZE 256
+#define LFS_BLOCK_SIZE 4096
+#define LFS_CACHE_SIZE 256
+#define LFS_BLOCK_CYCLES -1
+#define LFS_THREADSAFE
+#define LFS_LOOKAHEAD_MAX 128
+#define RT_DEF_LFS_DRIVERS 1
 /* end of system packages */
 
 /* peripheral libraries and drivers */
@@ -443,6 +471,8 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_USART1
+#define BSP_USING_SPI
+#define BSP_USING_SPI1
 #define BSP_USING_I2C1
 #define BSP_I2C1_SCL_PIN 74
 #define BSP_I2C1_SDA_PIN 75

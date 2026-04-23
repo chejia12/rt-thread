@@ -10,7 +10,7 @@
       <TargetName>rt-thread</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -338,9 +338,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__STDC_LIMIT_MACROS, RT_USING_LIBC, USE_STDPERIPH_DRIVER, __RTTHREAD__, N32G45X, RT_USING_ARMLIBC, __CLK_TCK=RT_TICK_PER_SECOND</Define>
+              <Define>RT_USING_LIBC, __RTTHREAD__, N32G45X, USE_STDPERIPH_DRIVER, LFS_CONFIG=lfs_config.h, RT_USING_ARMLIBC, __CLK_TCK=RT_TICK_PER_SECOND, __STDC_LIMIT_MACROS</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\libraries\N32G45x_Firmware_Library\CMSIS\core;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;board;..\..\..\..\components\drivers\include;..\..\..\..\components\net\utest;..\..\..\..\components\drivers\phy;..\..\..\..\components\drivers\include;..\libraries\n32_drivers\config;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\libraries\n32_drivers;user58\config;packages\ds1307-latest;..\..\..\..\components\libc\posix\ipc;..\..\..\..\components\drivers\include;..\..\..\..\components\libc\compilers\common\include;..\..\..\..\components\libc\posix\io\epoll;..\..\..\..\components\drivers\include;..\..\..\..\libcpu\arm\common;..\..\..\..\components\finsh;applications;..\..\..\..\components\drivers\spi;..\..\..\..\components\libc\compilers\common\extension\fcntl\octal;user58;..\..\..\..\libcpu\arm\cortex-m4;..\..\..\..\components\drivers\include;..\..\..\..\components\libc\posix\io\poll;.;..\libraries\N32G45x_Firmware_Library\CMSIS\device;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\smp_call;..\..\..\..\components\drivers\include;..\..\..\..\components\libc\posix\io\eventfd;..\libraries\N32G45x_Firmware_Library\n32g45x_std_periph_driver\inc;..\..\..\..\components\libc\compilers\common\extension;..\..\..\..\include</IncludePath>
+              <IncludePath>..\..\..\..\components\libc\posix\ipc;user58\config;..\libraries\n32_drivers;.;..\..\..\..\components\libc\compilers\common\extension\fcntl\octal;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\components\libc\compilers\common\include;..\libraries\n32_drivers\config;..\..\..\..\components\net\utest;..\..\..\..\components\drivers\smp_call;..\..\..\..\components\drivers\spi\sfud\inc;packages\littlefs-latest;applications;..\libraries\N32G45x_Firmware_Library\CMSIS\device;..\..\..\..\components\libc\compilers\common\extension;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;board;..\..\..\..\components\drivers\include;user58;..\..\..\..\include;..\..\..\..\components\drivers\include;..\libraries\N32G45x_Firmware_Library\n32g45x_std_periph_driver\inc;..\..\..\..\libcpu\arm\common;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\include;..\..\..\..\libcpu\arm\cortex-m4;..\..\..\..\components\libc\posix\io\poll;..\..\..\..\components\finsh;..\..\..\..\components\drivers\include;packages\ds1307-latest;..\libraries\N32G45x_Firmware_Library\CMSIS\core;..\..\..\..\components\drivers\include;..\..\..\..\components\drivers\spi;..\..\..\..\components\drivers\phy;..\..\..\..\components\libc\posix\io\eventfd;..\..\..\..\components\drivers\include;..\..\..\..\components\dfs\dfs_v1\include;..\..\..\..\components\libc\posix\io\epoll;..\..\..\..\components\drivers\include;..\..\..\..\components\fal\inc;..\..\..\..\components\drivers\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -471,10 +471,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -527,10 +527,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -583,10 +583,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -639,10 +639,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -695,10 +695,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -751,10 +751,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -807,10 +807,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -863,10 +863,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -919,10 +919,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -975,10 +975,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1031,10 +1031,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1087,10 +1087,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1143,10 +1143,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1199,10 +1199,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1255,10 +1255,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1311,10 +1311,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1367,10 +1367,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1423,10 +1423,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1479,10 +1479,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1535,10 +1535,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1591,10 +1591,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1647,10 +1647,178 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>dev_spi_flash_sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\drivers\spi\dev_spi_flash_sfud.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define>__RT_IPC_SOURCE__</Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\drivers\spi\sfud\src\sfud.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define>__RT_IPC_SOURCE__</Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>sfud_sfdp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\drivers\spi\sfud\src\sfud_sfdp.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define>__RT_IPC_SOURCE__</Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1703,10 +1871,10 @@
                     <v6WtE>2</v6WtE>
                     <v6Rtti>2</v6Rtti>
                     <VariousControls>
-                      <MiscControls> </MiscControls>
+                      <MiscControls>  --c99</MiscControls>
                       <Define>__RT_IPC_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1790,6 +1958,265 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Fal</GroupName>
+          <Files>
+            <File>
+              <FileName>fal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\fal\src\fal.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\fal\src\fal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_partition.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\fal\src\fal_partition.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_rtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\fal\src\fal_rtt.c</FilePath>
+            </File>
+            <File>
+              <FileName>fal_flash_sfud_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\fal\samples\porting\fal_flash_sfud_port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Filesystem</GroupName>
+          <Files>
+            <File>
+              <FileName>dfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\dfs\dfs_v1\src\dfs.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define> </Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>dfs_file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\dfs\dfs_v1\src\dfs_file.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define> </Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>dfs_fs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\dfs\dfs_v1\src\dfs_fs.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define> </Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>dfs_posix.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\dfs\dfs_v1\src\dfs_posix.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
+                  <PublicsOnly>0</PublicsOnly>
+                  <StopOnExitCode>3</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls>  --c99</MiscControls>
+                      <Define> </Define>
+                      <Undefine> </Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Finsh</GroupName>
           <Files>
             <File>
@@ -1811,6 +2238,11 @@
               <FileName>cmd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\components\finsh\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>msh_file.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\finsh\msh_file.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1867,7 +2299,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1923,7 +2355,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -1979,7 +2411,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2035,7 +2467,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2091,7 +2523,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2147,7 +2579,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2203,7 +2635,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2259,7 +2691,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2315,7 +2747,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2371,7 +2803,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2427,7 +2859,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2483,7 +2915,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2539,7 +2971,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2595,7 +3027,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2651,7 +3083,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2707,7 +3139,7 @@
                       <MiscControls> </MiscControls>
                       <Define>__RT_KERNEL_SOURCE__</Define>
                       <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
+                      <IncludePath></IncludePath>
                     </VariousControls>
                   </Cads>
                 </FileArmAds>
@@ -2867,6 +3299,31 @@
               <FileName>n32g45x_iwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\N32G45x_Firmware_Library\n32g45x_std_periph_driver\src\n32g45x_iwdg.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>littlefs</GroupName>
+          <Files>
+            <File>
+              <FileName>dfs_lfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\littlefs-latest\dfs_lfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\littlefs-latest\lfs.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\littlefs-latest\lfs_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lfs_util.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\littlefs-latest\lfs_util.c</FilePath>
             </File>
           </Files>
         </Group>
