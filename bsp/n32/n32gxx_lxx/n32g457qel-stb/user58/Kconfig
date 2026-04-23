@@ -1,0 +1,20 @@
+menu "user driber of 58"
+	# NOR Flash+DFS
+ 	config BRD_DFS_NOR_FLASH
+        bool "Enable IN NOR FLASH MOUNT DFS elm or lfs"
+        default n
+        if BRD_DFS_NOR_FLASH
+            config SFUD_NOR_FLASH_ATTACH_SPI_BUS
+                string "select spi  bus of attach nor flash"
+                default "spi1"
+			config SPI_CS_NO_FLASH
+				int "select spi cs pin"
+				range 0 112
+				default 4
+            config SFUD_NOR_FLASH_NAME
+                string "set nor flash device name  dev type = SPI Device "
+                default "spi11"
+			
+        endif
+endmenu
+
