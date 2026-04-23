@@ -30,7 +30,7 @@
  */
 #include <rtthread.h>
 
-#define DBG_TAG "SIMPLE"
+#define DBG_TAG "DFS"
 #define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 

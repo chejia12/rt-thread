@@ -19,5 +19,50 @@ menu "user driber of 58"
                 default "spi11"
 			
         endif
+	#HT530 12bit dac
+	config BRD_DAC_HT5320
+        bool "Enable DAC HT530"
+        default n
+		depends on RT_USING_SPI
+		if BRD_DAC_HT5320
+			config BRD_DAC_HT5320_SPI_BUS
+                string "select spi  bus of attach nor flash"
+                default "spi2"
+			config BRD_DAC_HT5320_CH0
+				int "select chanel 0  cs pin "
+				range 0 112
+				default 4
+			config BRD_DAC_HT5320_CH1
+				int "select chanel 1  cs pin "
+				range 0 112
+				default 5
+			config BRD_DAC_HT5320_CH2
+				int "select chanel 2  cs pin "
+				range 0 112
+				default 6
+			config BRD_DAC_HT5320_CH3
+				int "select chanel 3  cs pin "
+				range 0 112
+				default 7
+		endif
+	#北斗解析库
+	config BRD_GPS_BD
+        bool "Enable gps and beidou positong"
+        default n
+        if BRD_GPS_BD
+            config BD_DEBUG
+                bool "Enable BEI DOU DEBUG"
+                default n
+        endif
+	#MCP4728 是一款由 Microchip（微芯科技）生产的四通道、12位分辨率的数模转换器（DAC）。它通过 I²C 串行接口与控制器通信，并且内置了 EEPROM 非易失性存储器，可以在断电后保存配置和输出值
+	config BRD_DAC_MCP4728
+        bool "Enable DAC MCP4728"
+        default n
+		depends on RT_USING_I2C
+		if BRD_DAC_MCP4728
+			config BRD_DAC_MCP4728_I2C_BUS
+                string "select i2c  bus of attach MCP4728"
+                default "i2c2"
+		endif
 endmenu
 
