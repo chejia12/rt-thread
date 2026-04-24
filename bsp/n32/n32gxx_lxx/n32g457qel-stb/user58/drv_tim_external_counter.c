@@ -68,6 +68,9 @@ enum
 #ifdef BSP_USING_TIM8_EXT_COUNTER
     EXT_CLK_TIM8,
 #endif
+#ifdef BSP_USING_TIM9_EXT_COUNTER
+    EXT_CLK_TIM9,
+#endif
     EXT_CLK_NUM/*这里就是设备的数量*/
 };
 
@@ -997,6 +1000,16 @@ void TIM8_UP_IRQHandler(void)
 {
     rt_interrupt_enter();
     n32_tim_ext_counter_irq_handler(tim1_ext_counter_device + EXT_CLK_TIM8);
+    rt_interrupt_leave();
+}
+#endif /**/
+
+/* TIM9外部计数器中断处理 */
+#ifdef BSP_USING_TIM9_EXT_COUNTER
+void TIM9_UP_IRQHandler(void)
+{
+    rt_interrupt_enter();
+    n32_tim_ext_counter_irq_handler(tim1_ext_counter_device + EXT_CLK_TIM9);
     rt_interrupt_leave();
 }
 #endif /**/
