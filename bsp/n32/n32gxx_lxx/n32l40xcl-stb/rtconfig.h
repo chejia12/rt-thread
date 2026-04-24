@@ -104,6 +104,7 @@
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 128
 #define RT_CONSOLE_DEVICE_NAME "usart1"
+#define RT_USING_CONSOLE_OUTPUT_CTL
 #define RT_VER_NUM 0x50300
 #define RT_BACKTRACE_LEVEL_MAX_NR 32
 /* end of RT-Thread Kernel */
@@ -158,7 +159,6 @@
 #define RT_USING_SPI_ISR
 #define RT_USING_WDT
 #define RT_USING_PIN
-#define RT_USING_HWTIMER
 /* end of Device Drivers */
 
 /* C/C++ and POSIX layer */
@@ -428,6 +428,14 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_USART1
+#define BSP_USING_TIM_EXT_COUNTER
+#define TIM1_CH1_PA8
+#define TIM2_CH1_PA0
+#define TIM3_CH1_PA6
+#define BSP_USING_TIM4_EXT_COUNTER
+#define TIM4_EXCK1_CH1_PB6
+#define TIM5_EXCK1_CH1_PA0
+#define TIM8_EXCK1_CH1_PC6
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */

@@ -35,8 +35,8 @@ if GetDepend(['BRD_GPS_BD']):
 # if GetDepend(['BRD_RTC_DS1307']):
 #     src += ['drv_rtc_ds1307.c']   
 
-# if GetDepend(['LIB_CRC_XOR']):
-#     src += ['crc_xor.c']   
+if GetDepend(['BSP_USING_TIM_EXT_COUNTER']):
+    src += ['drv_tim_external_counter.c']   
 
 if GetDepend(['BRD_OBSERVER']):
     src += ['observer.c'] 

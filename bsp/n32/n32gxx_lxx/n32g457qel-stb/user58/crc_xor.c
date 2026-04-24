@@ -9,7 +9,6 @@
  *
  */
 #include <rtthread.h>
-#include <ulog.h>
 #ifdef LIB_CRC_XOR
 
 /*

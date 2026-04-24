@@ -139,21 +139,7 @@
 
 /* DFS: device virtual file system */
 
-#define RT_USING_DFS
-#define DFS_USING_POSIX
-#define DFS_USING_WORKDIR
-#define DFS_FD_MAX 16
-#define RT_USING_DFS_V1
-#define DFS_FILESYSTEMS_MAX 4
-#define DFS_FILESYSTEM_TYPES_MAX 4
 /* end of DFS: device virtual file system */
-#define RT_USING_FAL
-#define FAL_USING_DEBUG
-#define FAL_PART_HAS_TABLE_CFG
-#define FAL_USING_SFUD_PORT
-#define FAL_USING_NOR_FLASH_DEV_NAME "flash"
-#define FAL_DEV_NAME_MAX 24
-#define FAL_DEV_BLK_MAX 6
 
 /* Device Drivers */
 
@@ -313,16 +299,6 @@
 /* Micrium: Micrium software products porting for RT-Thread */
 
 /* end of Micrium: Micrium software products porting for RT-Thread */
-#define PKG_USING_LITTLEFS
-#define PKG_USING_LITTLEFS_LATEST_VERSION
-#define LFS_READ_SIZE 256
-#define LFS_PROG_SIZE 256
-#define LFS_BLOCK_SIZE 4096
-#define LFS_CACHE_SIZE 256
-#define LFS_BLOCK_CYCLES -1
-#define LFS_THREADSAFE
-#define LFS_LOOKAHEAD_MAX 128
-#define RT_DEF_LFS_DRIVERS 1
 /* end of system packages */
 
 /* peripheral libraries and drivers */
@@ -381,12 +357,6 @@
 /* touch drivers */
 
 /* end of touch drivers */
-#define PKG_USING_EXTERN_RTC_DRIVERS
-#define PKG_USING_DS1307
-#define PKG_DS1307_IIC_BUS "i2c1"
-#define PKG_DS1307_DEBUG
-#define PKG_DS1307_RAM_SHELL_TEST
-#define PKG_USING_DS1307_LATEST_VERSION
 /* end of peripheral libraries and drivers */
 
 /* AI packages */
@@ -471,11 +441,6 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_USART1
-#define BSP_USING_SPI
-#define BSP_USING_SPI1
-#define BSP_USING_I2C1
-#define BSP_I2C1_SCL_PIN 74
-#define BSP_I2C1_SDA_PIN 75
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */
@@ -484,10 +449,13 @@
 
 /* user driber of 58 */
 
-#define BRD_DFS_NOR_FLASH
-#define SFUD_NOR_FLASH_ATTACH_SPI_BUS "spi1"
-#define SPI_CS_NO_FLASH 4
-#define SFUD_NOR_FLASH_NAME "spi11"
+#define BSP_USING_TIM_EXT_COUNTER
+#define BSP_USING_TIM1_EXT_COUNTER
+#define TIM1_CH1_PA8
+#define BSP_USING_TIM2_EXT_COUNTER
+#define TIM2_CH1_PA0
+#define BSP_USING_TIM3_EXT_COUNTER
+#define TIM3_CH1_PA6
 /* end of user driber of 58 */
 
 #endif
