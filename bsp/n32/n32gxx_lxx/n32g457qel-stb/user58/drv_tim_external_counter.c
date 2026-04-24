@@ -664,7 +664,7 @@ static struct n32_tim_ext_counter_config tim1_ext_counter_config[EXT_CLK_NUM] =
             .timer_periph = TIM9,
             .polarity = TIM_IC_POLARITY_RISING,
             .filter = 0x0,
-            .irqn = TIM9_UP_IRQn,
+            .irqn = TIM9_IRQn,/*L406是它，其他芯片可能不是*/
 #ifdef TIM9_EXCK1_CH1_PB12
             .tim_channel = TIM_CH_1,
             .gpio_periph = GPIOB,
