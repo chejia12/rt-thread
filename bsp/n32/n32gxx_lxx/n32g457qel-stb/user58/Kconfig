@@ -64,5 +64,14 @@ menu "user driber of 58"
                 string "select i2c  bus of attach MCP4728"
                 default "i2c2"
 		endif
+	# 观察者模式
+	config BRD_OBSERVER
+        bool "Enable Observer Design Pattern "
+        default y
+		if BRD_OBSERVER
+			config BRD_OBSERVER_SAMPLE
+                bool "Enable Observer Design Pattern use sample "
+        		default n
+		endif
 endmenu
 

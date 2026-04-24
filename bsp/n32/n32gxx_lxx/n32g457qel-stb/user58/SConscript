@@ -12,6 +12,7 @@ src = Split("""
 
 src += ['treaty_base_lsb.c']
 src += ['treaty_base_msb.c']
+src += ['crc_xor.c']
 
 if GetDepend(['BRD_DAC_HT5320']):
     src += ['dac_ht5320.c']
@@ -25,17 +26,22 @@ if GetDepend(['BRD_DFS_NOR_FLASH']):
 if GetDepend(['BRD_GPS_BD']):
     src += ['gps_bd.c']    
 
-if GetDepend(['BRD_RTC_AIP1307']):
-    src += ['RTC_AiP1307SA8.c']    
+# if GetDepend(['BRD_RTC_AIP1307']):
+#     src += ['RTC_AiP1307SA8.c']    
 
-if GetDepend(['BRD_RTC_PCF8563']):
-    src += ['rtc_pcf8563.c']    
+# if GetDepend(['BRD_RTC_PCF8563']):
+#     src += ['rtc_pcf8563.c']    
 
-if GetDepend(['BRD_RTC_DS1307']):
-    src += ['drv_rtc_ds1307.c']   
+# if GetDepend(['BRD_RTC_DS1307']):
+#     src += ['drv_rtc_ds1307.c']   
 
-if GetDepend(['LIB_CRC_XOR']):
-    src += ['crc_xor.c']   
+# if GetDepend(['LIB_CRC_XOR']):
+#     src += ['crc_xor.c']   
+
+if GetDepend(['BRD_OBSERVER']):
+    src += ['observer.c'] 
+if GetDepend(['BRD_OBSERVER_SAMPLE']):
+    src += ['observer_demo.c'] 
 
 path =  [cwd]
 path += [cwd + '/config']
