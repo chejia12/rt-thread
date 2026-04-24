@@ -436,6 +436,7 @@
 #define TIM4_EXCK1_CH1_PB6
 #define TIM5_EXCK1_CH1_PA0
 #define TIM8_EXCK1_CH1_PC6
+#define TIM9_EXCK1_CH1_PB12
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */

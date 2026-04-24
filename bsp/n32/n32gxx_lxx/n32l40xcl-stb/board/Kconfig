@@ -390,6 +390,17 @@ menu "On-chip Peripheral Drivers"
 				config TIM8_EXCK1_CH2_PC7
 					bool "CH2_PC7"
 			endchoice		
+		config BSP_USING_TIM9_EXT_COUNTER
+			bool "Enable TIM9 External Counter"
+			default n
+			choice
+				prompt "Select TIM9 Pin"
+				default TIM9_EXCK1_CH1_PB12
+				config TIM9_EXCK1_CH1_PB12
+					bool "CH1_PB12"
+				config TIM9_EXCK1_CH2_PB13
+					bool "CH2_PB13"
+			endchoice		
 	endif#---------BSP_USING_TIM_EXT_COUNTER------------
 
         

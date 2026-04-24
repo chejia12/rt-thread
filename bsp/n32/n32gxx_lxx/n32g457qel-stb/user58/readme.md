@@ -5,7 +5,7 @@
 2026-04-24
 
 ```
-#-----------------------------EXT_COUNTER----N32L40x----20260424新增TIM 4,5,8--------------------------
+#-----------------------------EXT_COUNTER----N32L40x----20260424新增TIM 4,5,8 外部时钟1计数配置--------------------------
 	menuconfig BSP_USING_TIM_EXT_COUNTER
 	bool "Enable TIM External Counter"
 	default n
@@ -91,6 +91,17 @@
 					bool "CH1_PC6"
 				config TIM8_EXCK1_CH2_PC7
 					bool "CH2_PC7"
+			endchoice	
+          config BSP_USING_TIM9_EXT_COUNTER
+			bool "Enable TIM9 External Counter"
+			default n
+			choice
+				prompt "Select TIM9 Pin"
+				default TIM9_EXCK1_CH1_PB12
+				config TIM9_EXCK1_CH1_PB12
+					bool "CH1_PB12"
+				config TIM9_EXCK1_CH2_PB13
+					bool "CH2_PB13"
 			endchoice		
 	endif#---------BSP_USING_TIM_EXT_COUNTER------------
 ```

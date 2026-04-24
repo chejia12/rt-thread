@@ -653,6 +653,32 @@ static struct n32_tim_ext_counter_config tim1_ext_counter_config[EXT_CLK_NUM] =
         },
 #endif /*BSP_USING_TIM8_EXT_COUNTER*/
 
+
+/***************N32L406 TIM9 ****************************/
+#ifdef BSP_USING_TIM9_EXT_COUNTER
+        {
+
+            .timer_periph = TIM9,
+            .polarity = TIM_IC_POLARITY_RISING,
+            .filter = 0x0,
+            .irqn = TIM9_UP_IRQn,
+#ifdef TIM9_EXCK1_CH1_PB12
+            .tim_channel = TIM_CH_1,
+            .gpio_periph = GPIOB,
+            .gpio_pin = GPIO_PIN_12,
+            .gpio_af = GPIO_AF1_TIM9,
+            .info = "TIM9 PB12",
+#endif /*TIM9_EXCK1_CH1_PB12*/
+#ifdef TIM9_EXCK1_CH2_PB13
+            .tim_channel = TIM_CH_2,
+            .gpio_periph = GPIOB,
+            .gpio_pin = GPIO_PIN_13,
+            .gpio_af = GPIO_AF1_TIM9,
+            .info = "TIM9 PB13",
+#endif /*TIM9_EXCK1_CH2_PB13*/
+        },
+#endif /*BSP_USING_TIM9_EXT_COUNTER*/
+
 #endif
 
 };
